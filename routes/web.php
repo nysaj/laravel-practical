@@ -5,6 +5,7 @@ use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\TwoFactor;
+use App\Livewire\ShowPost;
 use App\Livewire\ShowPosts;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
@@ -24,7 +25,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('settings/password', Password::class)->name('user-password.edit');
     Route::get('settings/appearance', Appearance::class)->name('appearance.edit');
 
-    Route::get('/posts/create', CreatePost::class)->name('posts.create');   
+    Route::get('/posts/create', CreatePost::class)->name('posts.create');
+    Route::get('/posts/{post}', ShowPost::class)->name('post');
+
 });
 
 Route::get('/posts', ShowPosts::class)->name('posts');

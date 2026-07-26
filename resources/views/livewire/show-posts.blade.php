@@ -10,10 +10,12 @@
 
     @foreach ($posts as $post)
         <article class="p-4 shadow-lg">
-            <flux:text class="mt-4">{{ $post->created_at->format('y/m/d') }}</flux:text>
-            <flux:heading size="lg" level="2">{{ $post->title }}</flux:heading>
-            <flux:text class="mt-2">{{ Str::limit($post->body, 100) }}</flux:text>
-            <flux:text class="mt-4">投稿者: {{ $post->user->name }}</flux:text>
+            <a href="/posts/{{ $post->id }}">
+                <flux:text class="mt-4">{{ $post->created_at->format('y/m/d') }}</flux:text>
+                <flux:heading size="lg" level="2">{{ $post->title }}</flux:heading>
+                <flux:text class="mt-2">{{ Str::limit($post->body, 100) }}</flux:text>
+                <flux:text class="mt-4">投稿者: {{ $post->user->name }}</flux:text>
+            </a>
         </article>
     @endforeach
 </div>
