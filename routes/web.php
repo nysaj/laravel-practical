@@ -1,6 +1,8 @@
 <?php
 
 use App\Livewire\CreatePost;
+use App\Livewire\EditPost;
+use App\Livewire\MyPosts;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
@@ -27,6 +29,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/posts/create', CreatePost::class)->name('posts.create');
     Route::get('/posts/{post}', ShowPost::class)->name('post');
+    Route::get('/posts/{post}/edit', EditPost::class)->name('posts.edit');
+    
+    Route::get('/my-posts', MyPosts::class)->name('my-posts');
 
 });
 
