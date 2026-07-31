@@ -1,6 +1,9 @@
 <div class="mx-w-4xl mx-auto p-6 space-y-6">
-    <div class="flex justify-between items-center">
-        <flex:heading size="lg" level="1">自分の記事投稿一覧</flex:heading>
+    <flux:heading size="xl" level="1" class="mb-5">自分の記事投稿一覧</flux:heading>
+
+    <div class="flex justify-between items-center mb-6 gap-4">
+        <flux:input wire:model.live="search" icon="magnifying-glass" class="w-64" placeholder="タイトルで検索"/>
+
         @auth
             <flux:button href="{{ route('posts.create') }}" wire:navigate variant="primary">
                 新規作成

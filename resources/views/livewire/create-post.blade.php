@@ -1,5 +1,5 @@
 <div class="max-w-2xl mx-auto p-6">
-    <flux:heading size='lg' level='1'>記事作成ページ</flux:heading>
+    <flux:heading size='xl' level='1' class="mb-5">記事作成ページ</flux:heading>
 
     @if (session('status'))
         <div class="mb-4 p-4 bg-green-100 text-green-700 rounded">

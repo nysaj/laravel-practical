@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\CreatePost;
+use App\Livewire\DashBoard;
 use App\Livewire\EditPost;
 use App\Livewire\MyPosts;
 use App\Livewire\Settings\Appearance;
@@ -16,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::view('dashboard', 'dashboard')
+Route::get('dashboard', DashBoard::class)
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
