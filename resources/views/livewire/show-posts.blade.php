@@ -28,25 +28,5 @@
 
     {{ $posts->links() }}
 
-    <button id="back-to-top" class="fixed bottom-4 right-4">↑TOPへ戻る</button>
+    <button id="back-to-top" class="fixed bottom-4 right-4 cursor-pointer rounded bg-lime-700 px-4 py-1 hover:bg-lime-800">↑TOPへ戻る</button>
 </div>
-
-<script>
-    const backToTopButton = document.getElementById("back-to-top");
-
-   backToTopButton.addEventListener("click", () => {
-        window.scrollTo({
-            left: 0,
-            top: 0,
-            behavior: "smooth"
-        })
-    });
-
-    window.addEventListener("scroll", () => {
-        if (window.scrollY >=300) {
-            backToTopButton.classList.remove("hidden")
-        } else {
-            backToTopButton.classList.add("hidden")
-        }
-   });
-</script>
