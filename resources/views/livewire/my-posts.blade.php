@@ -10,6 +10,11 @@
             </flux:button>    
         @endauth
     </div>
+
+    <div>
+        全{{ $posts->total() }}件
+    </div>
+
     @if (session('status'))
         <div class="p-4 bg-green-100 text-green-700 rounded">
             {{ session('status') }}

@@ -1,5 +1,5 @@
 <div class="space-y-4">
-    <flux:heading size="xl" level="1" class="mb-5">記事一覧ページ</flux:heading>
+    <flux:heading size="xl" level="1" class="mb-5">全記事一覧ページ</flux:heading>
 
     <div class="flex justify-between items-center mb-6 gap-4 mt-6">
         <flux:input wire:model.live="search" icon="magnifying-glass" class="w-64" placeholder="タイトルで検索"/>
@@ -9,6 +9,10 @@
                 新規作成
             </flux:button>    
         @endauth
+    </div>
+
+    <div>
+        全{{ $posts->total() }}件
     </div>
 
     @foreach ($posts as $post)
@@ -23,4 +27,26 @@
     @endforeach
 
     {{ $posts->links() }}
+
+    <button id="back-to-top" class="fixed bottom-4 right-4">↑TOPへ戻る</button>
 </div>
+
+<script>
+    const backToTopButton = document.getElementById("back-to-top");
+
+   backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+            left: 0,
+            top: 0,
+            behavior: "smooth"
+        })
+    });
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY >=300) {
+            backToTopButton.classList.remove("hidden")
+        } else {
+            backToTopButton.classList.add("hidden")
+        }
+   });
+</script>

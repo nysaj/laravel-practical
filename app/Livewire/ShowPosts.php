@@ -10,7 +10,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 
 #[Layout("components.layouts.guest")]
-#[Title("記事一覧ページ")]
+#[Title("全記事一覧ページ")]
 class ShowPosts extends Component
 {
     use WithPagination;
