@@ -46,5 +46,5 @@
 
     {{ $posts->links() }}
 
-    <button id="back-to-top" class="fixed bottom-4 right-4 cursor-pointer rounded bg-emerald-600 px-4 py-1 hover:bg-emerald-800">↑TOPへ戻る</button>
+    <button id="back-to-top" class="hidden fixed bottom-4 right-4 cursor-pointer rounded bg-emerald-600 px-4 py-1 hover:bg-emerald-800">↑TOPへ戻る</button>
 </div>

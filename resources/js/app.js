@@ -1,13 +1,18 @@
-const backToTopButton = document.getElementById("back-to-top");
+function setBackToTopButton () {
+    const backToTopButton = document.getElementById("back-to-top");
+    
+    if (!backToTopButton) {
+        return;
+    }
 
-if (backToTopButton) {
     backToTopButton.addEventListener("click", () => {
         window.scrollTo({
             left: 0,
             top: 0,
             behavior: "smooth"
-        })
+        });
     });
+    
     window.addEventListener("scroll", () => {
         const scrollPosition = window.scrollY;
 
@@ -15,6 +20,9 @@ if (backToTopButton) {
             backToTopButton.classList.remove("hidden")
         } else {
             backToTopButton.classList.add("hidden")
-        }
+        };
     });
-}
+};
+
+document.addEventListener("DOMContentLoaded", setBackToTopButton);
+document.addEventListener("livewire:navigated", setBackToTopButton);
