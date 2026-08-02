@@ -4,10 +4,12 @@ namespace App\Livewire;
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Title;
 use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 
+#[Title("自分の記事一覧")]
 class MyPosts extends Component
 {
     use WithPagination;

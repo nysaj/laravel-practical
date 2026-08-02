@@ -4,9 +4,11 @@ namespace App\Livewire;
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\Title;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
+#[Title("記事編集ページ")]
 class EditPost extends Component
 {
     public Post $post;
